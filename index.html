@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>University Course Registration</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <div>
+        <h1>University Course Registration</h1>
+        <p>Student Academic Portal</p>
+    </div>
+</header>
+
+<nav>
+    <button onclick="showPage('home')">Home</button>
+    <button onclick="showPage('courses')">Courses</button>
+    <button onclick="showPage('register')">Register Course</button>
+    <button onclick="showPage('mycourses')">My Courses</button>
+    <button onclick="showPage('drop')">Drop Course</button>
+</nav>
+
+<main>
+
+    <section id="home" class="page active">
+        <h2>Welcome to the Student Portal</h2>
+        <p>
+            Manage your courses, register for available subjects,
+            and view your registered courses.
+        </p>
+
+        <div class="dashboard">
+            <div class="box">
+                <h3 id="courseCount">0</h3>
+                <p>Total Courses</p>
+            </div>
+
+            <div class="box">
+                <h3 id="studentCount">0</h3>
+                <p>Registered Students</p>
+            </div>
+
+            <div class="box">
+                <h3 id="availableCount">0</h3>
+                <p>Available Courses</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="courses" class="page">
+        <h2>Available Courses</h2>
+        <div id="courseList"></div>
+    </section>
+
+    <section id="register" class="page">
+        <h2>Student Course Registration</h2>
+
+        <label>Student ID</label>
+        <input type="text" id="studentId" placeholder="Enter Student ID">
+
+        <label>Student Name</label>
+        <input type="text" id="studentName" placeholder="Enter Student Name">
+
+        <label>Select Course</label>
+        <select id="courseSelect">
+            <option value="">Select Course</option>
+        </select>
+
+        <button onclick="registerCourse()">Register Course</button>
+
+        <p id="registerMessage"></p>
+    </section>
+
+    <section id="mycourses" class="page">
+        <h2>My Registered Courses</h2>
+
+        <label>Student ID</label>
+        <input type="text" id="viewStudentId" placeholder="Enter Student ID">
+
+        <button onclick="viewCourses()">View Courses</button>
+
+        <div id="myCourseList"></div>
+    </section>
+
+    <section id="drop" class="page">
+        <h2>Drop Course</h2>
+
+        <label>Student ID</label>
+        <input type="text" id="dropStudentId" placeholder="Enter Student ID">
+
+        <label>Course Code</label>
+        <input type="text" id="dropCourseCode" placeholder="Example: CS101">
+
+        <button onclick="dropCourse()">Drop Course</button>
+
+        <p id="dropMessage"></p>
+    </section>
+
+</main>
+
+<footer>
+    <p>© 2026 University Student Portal | Course Registration System</p>
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
